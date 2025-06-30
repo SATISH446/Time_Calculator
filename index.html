@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Time Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="toggle-container" onclick="toggleDarkMode()">
+    <span class="material-icons" id="toggleIcon">dark_mode</span>
+  </div>
+
+  <div class="icon-container">
+    <span class="material-icons">schedule</span>
+  </div>
+
+  <div class="container">
+    <h1>Time Calculator</h1>
+
+    <label>Select Date:</label>
+    <div class="date-picker">
+      <input type="date" id="date1">
+      <input type="date" id="date2">
+    </div>
+
+    <label>Pick Time 1:</label>
+    <div class="time-picker">
+      <select id="h1"></select>
+      <select id="m1"></select>
+      <select id="s1"></select>
+      <select id="ampm1"><option>AM</option><option>PM</option></select>
+    </div>
+    <input type="text" id="time1" readonly />
+
+    <label>Pick Time 2:</label>
+    <div class="time-picker">
+      <select id="h2"></select>
+      <select id="m2"></select>
+      <select id="s2"></select>
+      <select id="ampm2"><option>AM</option><option>PM</option></select>
+    </div>
+    <input type="text" id="time2" readonly />
+
+    <button onclick="findDifference()">Find Difference</button>
+    <div class="result" id="result"></div>
+    <div class="progress-bar"><div class="progress-bar-inner" id="progressBar"></div></div>
+    <div class="history" id="history"></div>
+    <div class="history-controls">
+      <button onclick="exportHistory()">📤 Export</button>
+      <button onclick="clearHistory()">🔄 Clear</button>
+      <button onclick="notifyIfSameTime()">🔔 Alert</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
